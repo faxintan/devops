@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "api": "api-extractor run",
     "docs": "api-documenter markdown --input-folder ./temp --output-folder ./docs"
   },
