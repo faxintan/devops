@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "extractor": "api-extractor run",
-    "documenter": "api-documenter markdown --input-folder ./temp --output-folder ./docs"
+    "api": "api-extractor run",
+    "docs": "api-documenter markdown --input-folder ./temp --output-folder ./docs"
   },
   "keywords": [],
   "author": "",

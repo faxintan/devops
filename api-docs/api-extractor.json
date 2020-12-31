@@ -1,16 +1,15 @@
 {
 	"$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
-	"mainEntryPointFilePath": "./libs/index.d.ts",
+	"mainEntryPointFilePath": "./typings/index.d.ts",
 	"bundledPackages": [],
 	"apiReport": {
-		"enabled": true,
-		"reportFolder": "./libs/"
+		"enabled": true
 	},
 	"docModel": {
 		"enabled": true
 	},
 	"dtsRollup": {
 		"enabled": true,
-		"untrimmedFilePath": "./libs/index.d.ts"
+		"untrimmedFilePath": "./typings/index.d.ts"
 	}
 }

@@ -42,16 +42,13 @@ node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
-typings/
+# typings/
 
 # TypeScript cache
 *.tsbuildinfo
 
 # Optional npm cache directory
 .npm
-
-# Mac 
-.DS_Store
 
 # Optional eslint cache
 .eslintcache
@@ -105,3 +102,16 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Lock
+package-lock.json
+
+# Mac 
+.DS_Store
+
+# api-docs
+api-docs/docs/
+api-docs/temp/
+api-docs/tsdoc-metadata.json
+
+
