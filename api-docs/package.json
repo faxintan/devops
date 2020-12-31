@@ -1,0 +1,17 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "extractor": "api-extractor run",
+    "documenter": "api-documenter markdown --input-folder ./temp --output-folder ./docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.12.1",
+    "@microsoft/api-extractor": "^7.12.1"
+  }
+}
