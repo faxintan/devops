@@ -8,7 +8,7 @@
       ],
       "removeComments": false,
       "declaration": true,
-      "sourceMap": true,
+      "sourceMap": false,
   
       /* 强类型检查配置 */
       "strict": true,
@@ -16,7 +16,7 @@
   
       /* 模块分析配置 */
       "baseUrl": ".",
-      "outDir": "./libs",
+      "outDir": "./typings",
       "esModuleInterop": true,
       "moduleResolution": "node",
       "resolveJsonModule": true

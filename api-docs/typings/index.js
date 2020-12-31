@@ -9,5 +9,7 @@
  *
  * @beta
  */
-declare function myFirstFunc(str: string): string;
+function myFirstFunc(str) {
+    return str;
+}
 export default myFirstFunc;
