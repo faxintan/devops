@@ -36,6 +36,7 @@ export function myFirstFunc(str: string): string {
 
 ```bash
 $ npm install   # 安装依赖
+$ npm run build # 编译ts文件
 $ npm run api   # 生成接口报告，并把libs/*.d.ts文件合并成单个声明文件
 $ npm run docs  # 根据接口报告生成markdown文档
 ```
