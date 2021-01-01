@@ -38,7 +38,7 @@ $ npm install commitizen -D # 构建符合规范的提交信息
 $ npm install cz-conventional-changelog -D # 提交信息的格式配置
 ```
 
-- 配置commitizen构建提交信息的格式，直接使用[cz-conventional-changelog](https://www.npmjs.com/package/cz-conventional-changelog)默认配置
+- 配置commitizen构建提交信息的格式，直接使用[cz-conventional-changelog](https://www.npmjs.com/package/cz-conventional-changelog)推荐配置
 
 ```js
 // .cz.json
@@ -52,21 +52,67 @@ $ npm install cz-conventional-changelog -D # 提交信息的格式配置
 
 ### 4. Commitlint
 
+[Commitlint](https://www.npmjs.com/package/@commitlint/cli)用于校验提交信息的格式，
+类似ESLint校验JS代码。配合[@commitlint/config-conventional](https://www.npmjs.com/package/@commitlint/config-conventional)使用推荐配置的格式
+
+```js
+// commitlint.config.js
+
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {},
+};
+```
+
 ### 5. Changelog
 
-### 6. Tools & Config
+提交信息符合规范后，可通过 [standard-version](https://www.npmjs.com/package/standard-version)
+提取提交类型为feat和fix的提交信息，生成项目变更Changelog报告
+
+
+```js
+// package.json 配置执行命令
+
+{
+  "scripts": {
+    "commit": "git-cz", // 构建规提交信息
+    "changelog": "standard-version" // 自动生成 changelog
+  }
+}
+```
+
+### 6. Husky
+
+[husky](https://www.npmjs.com/package/husky)安装时，会为当前仓库添加git钩子，
+卸载husky也会自动清除这些钩子。通过这些钩子，可以实现监听 commit-msg 命令的处理，
+并在执行前校验提交信息是否符合规范
+
+```js
+// package.json 配置husky
+
+{
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  }
+}
+```
+
+
+### 7. Tools & Config
 
 构建规范Msg引导
 - [npm] commitizen
 - [npm] cz-conventional-changelog
-- [js] .cz-config.js
+- [json] .cz.json
 - [vscode] commitizen
-
-根据规范Msg生成Changelog
-- [npm] standard-version
 
 校验Msg是否符合规范
 - [npm] @commitlint/cli
 - [npm] @commitlint/config-conventional
 - [npm] husky
-- [js] .commitlintrc.js
+- [javascript] commitlint.config.js
+
+根据规范Msg生成Changelog
+- [npm] standard-version
